@@ -1,0 +1,39 @@
+server:
+  servlet:
+    context-path: /
+  port: 8080
+  compression:
+    mime-types:
+      - application/json
+
+spring:
+  application:
+    name: default-arquetype
+  main:
+    allow-bean-definition-overriding: true
+
+  datasource:
+    url: jdbc:h2:mem:dbAda
+    username: sa
+    password:
+  sql:
+    init:
+      continue-on-error: true
+    driver-class-name: org.h2.Driver
+
+jpa:
+  open-in-view: false
+  show-sql: true
+  format-sql: true
+  hibernate:
+    ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 50
+
+  console:
+    enabled: true
+    path: /h2-console
+
